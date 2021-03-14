@@ -1,15 +1,15 @@
-[npm]: https://img.shields.io/npm/v/@rollup/plugin-json
-[npm-url]: https://www.npmjs.com/package/@rollup/plugin-json
-[size]: https://packagephobia.now.sh/badge?p=@rollup/plugin-json
-[size-url]: https://packagephobia.now.sh/result?p=@rollup/plugin-json
+[npm]: https://img.shields.io/npm/v/rollup-plugin-gproto
+[npm-url]: https://www.npmjs.com/package/rollup-plugin-gproto
+[size]: https://packagephobia.now.sh/badge?p=rollup-plugin-gproto
+[size-url]: https://packagephobia.now.sh/result?p=rollup-plugin-gproto
 
 [![npm][npm]][npm-url]
 [![size][size]][size-url]
 [![libera manifesto](https://img.shields.io/badge/libera-manifesto-lightgrey.svg)](https://liberamanifesto.com)
 
-# @rollup/plugin-json
+# rollup-plugin-gproto
 
-🍣 A Rollup plugin which Converts .json files to ES6 modules.
+🍣 A Rollup plugin which Convert grpc .proto files to ES6 modules.
 
 ## Requirements
 
@@ -20,7 +20,7 @@ This plugin requires an [LTS](https://github.com/nodejs/Release) Node version (v
 Using npm:
 
 ```console
-npm install @rollup/plugin-json --save-dev
+npm install rollup-plugin-gproto --save-dev
 ```
 
 ## Usage
@@ -28,7 +28,7 @@ npm install @rollup/plugin-json --save-dev
 Create a `rollup.config.js` [configuration file](https://www.rollupjs.org/guide/en/#configuration-files) and import the plugin:
 
 ```js
-import json from '@rollup/plugin-json';
+import proto from 'rollup-plugin-gproto';
 
 export default {
   input: 'src/index.js',
@@ -36,7 +36,7 @@ export default {
     dir: 'output',
     format: 'cjs'
   },
-  plugins: [json()]
+  plugins: [proto()]
 };
 ```
 
@@ -46,8 +46,8 @@ With an accompanying file `src/index.js`, the local `package.json` file would no
 
 ```js
 // src/index.js
-import pkg from './package.json';
-console.log(`running version ${pkg.version}`);
+import proto from './hello.proto';
+console.log(proto);
 ```
 
 ## Options
