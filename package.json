@@ -1,0 +1,72 @@
+{
+  "name": "rollup-plugin-gproto",
+  "version": "1.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Convert grpc .proto files to ES6 modules",
+  "license": "MIT",
+  "repository": "@microflows/rollup-plugin-proto",
+  "author": "microflows",
+  "homepage": "https://github.com/microflows/rollup-plugin-proto",
+  "bugs": "https://github.com/microflows/rollup-plugin-proto/issues",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "scripts": {
+    "build": "rollup -c",
+    "ci:coverage": "nyc cnpm run test && nyc report --reporter=text-lcov > coverage.lcov",
+    "ci:lint": "cnpm run build && cnpm run lint",
+    "ci:lint:commits": "commitlint --from=${CIRCLE_BRANCH} --to=${CIRCLE_SHA1}",
+    "ci:test": "cnpm run test -- --verbose && cnpm run test:ts",
+    "lint": "cnpm run lint:js && cnpm run lint:docs && cnpm run lint:proto && cnpm run lint:package",
+    "lint:docs": "prettier --single-quote --arrow-parens avoid --trailing-comma none --write README.md",
+    "lint:js": "eslint --fix --cache src test types --ext .js,.ts",
+    "lint:proto": "prettier --write \"test/fixtures/!(garbage)/*.proto\"",
+    "lint:package": "prettier --write package.json --plugin=prettier-plugin-package",
+    "prebuild": "del-cli dist",
+    "prepare": "cnpm run build",
+    "prepublishOnly": "cnpm run lint && cnpm run test",
+    "pretest": "cnpm run build",
+    "test": "ava",
+    "test:ts": "tsc types/index.d.ts test/types.ts --noEmit"
+  },
+  "files": [
+    "dist",
+    "types",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "rollup",
+    "plugin",
+    "proto",
+    "es2015",
+    "npm",
+    "modules"
+  ],
+  "peerDependencies": {
+    "rollup": "^1.20.0 || ^2.0.0"
+  },
+  "dependencies": {
+    "@grpc/proto-loader": "^0.5.6",
+    "@rollup/pluginutils": "^3.0.8"
+  },
+  "devDependencies": {
+    "@rollup/plugin-buble": "^0.21.0",
+    "@rollup/plugin-node-resolve": "^8.4.0",
+    "rollup": "^2.23.0",
+    "source-map-support": "^0.5.19"
+  },
+  "types": "types/index.d.ts",
+  "ava": {
+    "babel": {
+      "compileEnhancements": false
+    },
+    "files": [
+      "!**/fixtures/**",
+      "!**/helpers/**",
+      "!**/recipes/**",
+      "!**/types.ts"
+    ]
+  }
+}
