@@ -1,6 +1,5 @@
 import { createFilter, dataToEsm } from '@rollup/pluginutils'
-import schema from 'protocol-buffers-schema'
-import fs from 'fs'
+import Protobuf from "protobufjs"
 
 export default function proto(options = {}) {
   const filter = createFilter(options.include, options.exclude)
@@ -10,7 +9,7 @@ export default function proto(options = {}) {
     transform(code, id) {
       if (!filter(id)) return null
       if (id.slice(-6) === '.proto') {
-        const parsed = schema.parse(fs.readFileSync(id))
+        const parsed = Protobuf.loadSync(id).toJSON()
         return {
           code: dataToEsm(parsed, {
             preferConst: options.preferConst,

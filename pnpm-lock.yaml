@@ -4,13 +4,13 @@ specifiers:
   '@rollup/plugin-buble': ^0.21.0
   '@rollup/plugin-node-resolve': ^8.4.0
   '@rollup/pluginutils': ^3.0.8
-  protocol-buffers-schema: ^3.6.0
+  protobufjs: ^6.11.2
   rollup: ^2.23.0
   source-map-support: ^0.5.19
 
 dependencies:
   '@rollup/pluginutils': 3.1.0_rollup@2.56.3
-  protocol-buffers-schema: 3.6.0
+  protobufjs: registry.nlark.com/protobufjs/6.11.2
 
 devDependencies:
   '@rollup/plugin-buble': 0.21.3_rollup@2.56.3
@@ -19,6 +19,21 @@ devDependencies:
   source-map-support: 0.5.20
 
 packages:
+
+  /@protobufjs/fetch/1.1.0:
+    resolution: {integrity: sha1-upn7WYYUr2VwDBYZ/wbUVLDYTEU=, tarball: '@protobufjs/fetch/download/@protobufjs/fetch-1.1.0.tgz'}
+    dependencies:
+      '@protobufjs/aspromise': registry.nlark.com/@protobufjs/aspromise/1.1.2
+      '@protobufjs/inquire': 1.1.0
+    dev: false
+
+  /@protobufjs/inquire/1.1.0:
+    resolution: {integrity: sha1-/yAOPnzyQp4tyvwRQIKOjMY48Ik=, tarball: '@protobufjs/inquire/download/@protobufjs/inquire-1.1.0.tgz'}
+    dev: false
+
+  /@protobufjs/pool/1.1.0:
+    resolution: {integrity: sha1-Cf0V8tbTq/qbZbw2ZQbWrXhG/1Q=, tarball: '@protobufjs/pool/download/@protobufjs/pool-1.1.0.tgz'}
+    dev: false
 
   /@rollup/plugin-buble/0.21.3_rollup@2.56.3:
     resolution: {integrity: sha512-Iv8cCuFPnMdqV4pcyU+OrfjOfagPArRQ1PyQjx5KgHk3dARedI+8PNTLSMpJts0lQJr8yF2pAU4GxpxCBJ9HYw==}
@@ -221,10 +236,6 @@ packages:
     resolution: {integrity: sha512-lY1Q/PiJGC2zOv/z391WOTD+Z02bCgsFfvxoXXf6h7kv9o+WmsmzYqrAwY63sNgOxE4xEdq0WyUnXfKeBrSvYw==}
     engines: {node: '>=8.6'}
 
-  /protocol-buffers-schema/3.6.0:
-    resolution: {integrity: sha512-TdDRD+/QNdrCGCE7v8340QyuXd4kIWIgapsE2+n/SaGiSSbomYl4TjHlvIoCWRpE7wFt02EpB35VVA2ImcBVqw==}
-    dev: false
-
   /regenerate-unicode-properties/8.2.0:
     resolution: {integrity: sha512-F9DjY1vKLo/tPePDycuH3dn9H1OTPIkVD9Kz4LODu+F2C75mgjAJ7x/gwy6ZcSNRAAkhNlJSOHRe8k3p+K9WhA==}
     engines: {node: '>=4'}
@@ -319,3 +330,85 @@ packages:
     resolution: {integrity: sha512-PqSoPh/pWetQ2phoj5RLiaqIk4kCNwoV3CI+LfGmWLKI3rE3kl1h59XpX2BjgDrmbxD9ARtQobPGU1SguCYuQg==}
     engines: {node: '>=4'}
     dev: true
+
+  registry.nlark.com/@protobufjs/aspromise/1.1.2:
+    resolution: {integrity: sha1-m4sMxmPWaafY9vXQiToU00jzD78=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/@protobufjs/aspromise/download/@protobufjs/aspromise-1.1.2.tgz}
+    name: '@protobufjs/aspromise'
+    version: 1.1.2
+    dev: false
+
+  registry.nlark.com/@protobufjs/base64/1.1.2:
+    resolution: {integrity: sha1-TIVzDlm5ofHzSQR9vyQpYDS7JzU=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/@protobufjs/base64/download/@protobufjs/base64-1.1.2.tgz}
+    name: '@protobufjs/base64'
+    version: 1.1.2
+    dev: false
+
+  registry.nlark.com/@protobufjs/codegen/2.0.4:
+    resolution: {integrity: sha1-fvN/DQEPsCitGtWXIuUG2SYoFcs=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/@protobufjs/codegen/download/@protobufjs/codegen-2.0.4.tgz}
+    name: '@protobufjs/codegen'
+    version: 2.0.4
+    dev: false
+
+  registry.nlark.com/@protobufjs/eventemitter/1.1.0:
+    resolution: {integrity: sha1-NVy8mLr61ZePntCV85diHx0Ga3A=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/@protobufjs/eventemitter/download/@protobufjs/eventemitter-1.1.0.tgz}
+    name: '@protobufjs/eventemitter'
+    version: 1.1.0
+    dev: false
+
+  registry.nlark.com/@protobufjs/float/1.0.2:
+    resolution: {integrity: sha1-Xp4avctz/Ap8uLKR33jIy9l7h9E=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/@protobufjs/float/download/@protobufjs/float-1.0.2.tgz}
+    name: '@protobufjs/float'
+    version: 1.0.2
+    dev: false
+
+  registry.nlark.com/@protobufjs/path/1.1.2:
+    resolution: {integrity: sha1-bMKyDFya1q0NzP0hynZz2Nf79o0=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/@protobufjs/path/download/@protobufjs/path-1.1.2.tgz}
+    name: '@protobufjs/path'
+    version: 1.1.2
+    dev: false
+
+  registry.nlark.com/@protobufjs/utf8/1.1.0:
+    resolution: {integrity: sha1-p3c2C1s5oaLlEG+OhY8v0tBgxXA=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/@protobufjs/utf8/download/@protobufjs/utf8-1.1.0.tgz}
+    name: '@protobufjs/utf8'
+    version: 1.1.0
+    dev: false
+
+  registry.nlark.com/@types/long/4.0.1:
+    resolution: {integrity: sha1-RZxl+hhn2v5qjzIsTFFpVmPMVek=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/@types/long/download/@types/long-4.0.1.tgz}
+    name: '@types/long'
+    version: 4.0.1
+    dev: false
+
+  registry.nlark.com/@types/node/16.9.1:
+    resolution: {integrity: sha1-BhGzfbQkbJN/7vUp3cwBjPjjVwg=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/@types/node/download/@types/node-16.9.1.tgz?cache=0&sync_timestamp=1631225931029&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Fnode%2Fdownload%2F%40types%2Fnode-16.9.1.tgz}
+    name: '@types/node'
+    version: 16.9.1
+    dev: false
+
+  registry.nlark.com/long/4.0.0:
+    resolution: {integrity: sha1-mntxz7fTYaGU6lVSQckvdGjVvyg=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/long/download/long-4.0.0.tgz}
+    name: long
+    version: 4.0.0
+    dev: false
+
+  registry.nlark.com/protobufjs/6.11.2:
+    resolution: {integrity: sha1-3jn6vU7TK+qgjpux4w0IVEwe34s=, registry: https://registry.npm.taobao.org/, tarball: https://registry.nlark.com/protobufjs/download/protobufjs-6.11.2.tgz}
+    name: protobufjs
+    version: 6.11.2
+    hasBin: true
+    requiresBuild: true
+    dependencies:
+      '@protobufjs/aspromise': registry.nlark.com/@protobufjs/aspromise/1.1.2
+      '@protobufjs/base64': registry.nlark.com/@protobufjs/base64/1.1.2
+      '@protobufjs/codegen': registry.nlark.com/@protobufjs/codegen/2.0.4
+      '@protobufjs/eventemitter': registry.nlark.com/@protobufjs/eventemitter/1.1.0
+      '@protobufjs/fetch': 1.1.0
+      '@protobufjs/float': registry.nlark.com/@protobufjs/float/1.0.2
+      '@protobufjs/inquire': 1.1.0
+      '@protobufjs/path': registry.nlark.com/@protobufjs/path/1.1.2
+      '@protobufjs/pool': 1.1.0
+      '@protobufjs/utf8': registry.nlark.com/@protobufjs/utf8/1.1.0
+      '@types/long': registry.nlark.com/@types/long/4.0.1
+      '@types/node': registry.nlark.com/@types/node/16.9.1
+      long: registry.nlark.com/long/4.0.0
+    dev: false
