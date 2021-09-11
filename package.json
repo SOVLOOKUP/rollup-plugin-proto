@@ -1,5 +1,5 @@
 {
-  "name": "rollup-plugin-gpc-proto",
+  "name": "rollup-plugin-grpc-proto",
   "version": "1.1.0",
   "description": "A Rollup plugin which Convert grpc .proto files to ES6 modules of loaded grpc object.",
   "license": "MIT",
