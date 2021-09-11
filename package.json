@@ -4,7 +4,7 @@
   "description": "A Rollup plugin which Convert grpc .proto files to ES6 modules of loaded grpc object.",
   "license": "MIT",
   "author": "sovlookup",
-  "homepage": "",
+  "homepage": "https://github.com/SOVLOOKUP/rollup-plugin-gpc-proto",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "scripts": {
