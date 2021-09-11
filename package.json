@@ -1,7 +1,7 @@
 {
-  "name": "rollup-plugin-grpc-proto",
+  "name": "rollup-plugin-proto",
   "version": "1.1.0",
-  "description": "A Rollup plugin which Convert grpc .proto files to ES6 modules of loaded grpc object.",
+  "description": "A Rollup plugin which Convert proto files to ES6 modules",
   "license": "MIT",
   "author": "sovlookup",
   "homepage": "https://github.com/SOVLOOKUP/rollup-plugin-gpc-proto",
@@ -28,9 +28,8 @@
     "rollup": "^1.20.0 || ^2.0.0"
   },
   "dependencies": {
-    "@grpc/grpc-js": "^1.3.7",
-    "@grpc/proto-loader": "^0.5.6",
-    "@rollup/pluginutils": "^3.0.8"
+    "@rollup/pluginutils": "^3.0.8",
+    "protocol-buffers-schema": "^3.6.0"
   },
   "devDependencies": {
     "@rollup/plugin-buble": "^0.21.0",

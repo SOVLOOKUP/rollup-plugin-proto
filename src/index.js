@@ -1,6 +1,5 @@
 import { createFilter, dataToEsm } from '@rollup/pluginutils'
-import { loadSync } from "@grpc/proto-loader"
-import { loadPackageDefinition } from '@grpc/grpc-js'
+import schema from 'protocol-buffers-schema'
 
 export default function proto(options = {}) {
   const filter = createFilter(options.include, options.exclude)
@@ -10,7 +9,7 @@ export default function proto(options = {}) {
     transform(code, id) {
       if (!filter(id)) return null
       if (id.slice(-6) === '.proto') {
-        const parsed = loadPackageDefinition(loadSync(id))
+        const parsed = schema.parse(id)
         return {
           code: dataToEsm(parsed, {
             preferConst: options.preferConst,
