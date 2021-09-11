@@ -9,7 +9,7 @@
 
 # rollup-plugin-gproto
 
-🍣 A Rollup plugin which Convert grpc .proto files to ES6 modules.
+🍣 A Rollup plugin which Convert grpc .proto files to ES6 modules of loaded grpc object.
 
 ## Requirements
 
